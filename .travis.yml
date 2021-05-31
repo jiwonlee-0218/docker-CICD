@@ -21,8 +21,8 @@ script:
 after_success:
   #각 이미지 빌드 
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker build -t $USER/$REPO:${TRAVIS_COMMIT::7} -f ./web/Dockerfile-dev
-  - docker push $USER/$REPO:${TRAVIS_COMMIT::7}
+  - docker build -t $DOCKER_USERNAME/$REPO:${TRAVIS_COMMIT::7} -f web/Dockerfile-dev  web/
+  - docker push $DOCKER_USERNAME/$REPO:${TRAVIS_COMMIT::7}
   #도커 허브 로그인
   #아이디는 travis CI 홈페이지에 미리 넣어준다.
   #빌드된 이미지들을 도커 허브에 push
