@@ -20,7 +20,7 @@ script:
 
 after_success:
   #각 이미지 빌드 
-  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - docker build -t $USER/$REPO:${TRAVIS_COMMIT::7} -f ./web/Dockerfile-dev
   - docker push $USER/$REPO:${TRAVIS_COMMIT::7}
   #도커 허브 로그인
