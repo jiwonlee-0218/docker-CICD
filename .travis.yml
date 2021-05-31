@@ -6,8 +6,7 @@ services:
   - docker
 
 env:
-  - DOCKER_COMPOSE_VERSION=1.25.0
-  - USER=pjbear REPO=cicd
+  - DOCKER_COMPOSE_VERSION=1.25.0 USER=pjbear REPO=cicd
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
